@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>我的成长经历如何影响了现在的我</title>
+<meta name="description" content="一个自我探索工具：八种适应类型，理解成长环境可能教会了你什么。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F2EA; --paper-2:#FDFBF7;
+  --ink:#1B1916; --ink-2:#6B6359; --ink-3:#9C9388;
+  --line:#E6DFD3; --line-2:#EFEAE0;
+  --sage:#84A59D; --sage-deep:#52756D; --sage-tint:#E3ECE9;
+  --coral-tint:#F5E3DE; --coral:#C96F5F;
+  --radius:18px;
+  --shadow-s:0 2px 8px rgba(27,25,22,.05); --shadow-m:0 8px 24px rgba(27,25,22,.07);
+  --serif:'Fraunces','Noto Serif SC',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.75;font-size:16px;min-height:100vh;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='128' height='128' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+.wrap-wide{max-width:760px;margin:0 auto;padding:0 20px}
+.eyebrow{font-size:12px;letter-spacing:.18em;color:var(--sage-deep);font-weight:700;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--sage)}
+h1{font-family:var(--serif);font-size:clamp(30px,7vw,44px);line-height:1.28;font-weight:600}
+h2{font-family:var(--serif);font-size:clamp(22px,5vw,28px);line-height:1.35;font-weight:600}
+h3{font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.4}
+p.lead{font-size:17px;color:var(--ink-2);line-height:1.9}
+.muted{color:var(--ink-2)} .small{font-size:13px;color:var(--ink-3);line-height:1.7}
+.screen{display:none;animation:fadeUp .5s ease both}
+.screen.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pop{0%{opacity:0;transform:scale(.92)}70%{transform:scale(1.015)}100%{opacity:1;transform:scale(1)}}
+/* ---------- intro ---------- */
+.hero{padding:72px 0 40px}
+.hero .mark{width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 34% 30%, #A7C2BB, var(--sage) 68%);margin-bottom:28px;box-shadow:var(--shadow-m);position:relative}
+.hero .mark::after{content:"";position:absolute;inset:10px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55)}
+.hero h1 em{font-style:normal;color:var(--sage-deep)}
+.hero-actions{margin-top:36px;display:flex;flex-direction:column;gap:12px;max-width:400px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--sans);font-size:16px;font-weight:500;cursor:pointer;border:none;border-radius:14px;padding:15px 26px;transition:transform .18s,box-shadow .18s,background .18s;text-decoration:none;line-height:1.4}
+.btn:active{transform:scale(.985)}
+.btn-primary{background:var(--sage-deep);color:#FDFBF7;box-shadow:var(--shadow-m)}
+.btn-primary:hover{background:#45645D;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--ink-3);transform:translateY(-2px)}
+.btn-soft{background:var(--sage-tint);color:var(--sage-deep)}
+.btn-sm{padding:10px 18px;font-size:14px;border-radius:11px}
+.notice{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:26px 26px 22px;box-shadow:var(--shadow-s);margin:34px 0}
+.notice h3{margin-bottom:10px;display:flex;align-items:center;gap:9px}
+.notice h3 .dot{width:8px;height:8px;border-radius:50%;background:var(--coral);flex:none}
+.notice ul{list-style:none;margin-top:6px}
+.notice li{padding:7px 0 7px 22px;position:relative;color:var(--ink-2);font-size:15px;border-bottom:1px dashed var(--line-2)}
+.notice li:last-child{border-bottom:none}
+.notice li::before{content:"";position:absolute;left:2px;top:16px;width:6px;height:6px;border-radius:50%;background:var(--sage)}
+.philosophy{margin:40px 0 60px;padding:30px 26px;border-left:3px solid var(--sage);background:linear-gradient(90deg,var(--sage-tint),transparent 75%);border-radius:0 var(--radius) var(--radius) 0}
+.philosophy p{font-family:var(--serif);font-size:18px;line-height:1.9}
+.philosophy p+p{margin-top:12px}
+/* ---------- quiz ---------- */
+.q-top{position:sticky;top:0;z-index:20;background:rgba(247,242,234,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line-2);padding:14px 0 12px}
+.q-top-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.q-stage{font-size:12px;letter-spacing:.14em;font-weight:700;color:var(--sage-deep)}
+.q-count{font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.progress{height:4px;background:var(--line-2);border-radius:99px;margin-top:10px;overflow:hidden}
+.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--sage),var(--sage-deep));border-radius:99px;transition:width .45s cubic-bezier(.22,1,.36,1)}
+.q-body{padding:44px 0 110px;min-height:60vh}
+.q-card{animation:qIn .38s cubic-bezier(.22,1,.36,1) both}
+.q-card.leaving{animation:qOut .22s ease both}
+@keyframes qIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes qOut{from{opacity:1;transform:none}to{opacity:0;transform:translateY(-12px)}}
+.q-cat{font-size:13px;letter-spacing:.1em;color:var(--ink-3);font-weight:500;margin-bottom:12px}
+.q-text{font-family:var(--serif);font-size:clamp(20px,4.6vw,25px);line-height:1.55;font-weight:600;margin-bottom:8px}
+.q-hint{font-size:14px;color:var(--ink-3);margin-bottom:30px}
+.opts{display:flex;flex-direction:column;gap:10px;margin-top:26px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:15px 18px;font-family:var(--sans);font-size:16px;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s,transform .15s,box-shadow .15s;min-height:56px;line-height:1.6}
+.opt:hover{border-color:var(--sage);transform:translateY(-1px);box-shadow:var(--shadow-s)}
+.opt.sel{background:var(--sage-tint);border-color:var(--sage-deep);color:var(--sage-deep);font-weight:500}
+.opt .tick{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--line);flex:none;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.opt.sel .tick{border-color:var(--sage-deep);background:var(--sage-deep)}
+.opt.sel .tick::after{content:"";width:7px;height:7px;border-radius:50%;background:#fff}
+.opt.pair-opt{font-size:17px;font-weight:500;min-height:70px;justify-content:center;text-align:center;font-family:var(--serif)}
+.q-nav{display:flex;justify-content:space-between;align-items:center;margin-top:38px;gap:10px}
+.link-btn{background:none;border:none;font-family:var(--sans);font-size:14px;color:var(--ink-3);cursor:pointer;padding:10px 4px;text-decoration:underline;text-underline-offset:4px}
+.link-btn:hover{color:var(--ink)}
+.autosave{font-size:12px;color:var(--ink-3);text-align:center;margin-top:26px}
+/* ---------- interstitial ---------- */
+.inter{padding:90px 0;text-align:center}
+.inter .big{font-family:var(--serif);font-size:clamp(24px,6vw,32px);font-weight:600;line-height:1.5;margin:18px 0 14px}
+.inter .num{font-family:var(--serif);font-size:15px;color:var(--sage-deep);letter-spacing:.2em}
+/* ---------- result ---------- */
+.res-hero{padding:56px 0 10px}
+.res-hero .date{font-size:13px;color:var(--ink-3);letter-spacing:.08em;margin-top:10px}
+.res-sec{margin:44px 0}
+.res-sec h2{margin-bottom:14px}
+/* 揭示卡 */
+.type-card{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:26px;
+  padding:46px 30px 38px;box-shadow:var(--shadow-m);text-align:center;
+  margin:26px 0 10px;position:relative;overflow:hidden;animation:pop .6s cubic-bezier(.22,1,.36,1) both;
+}
+.type-card::before{content:"";position:absolute;top:-90px;left:50%;transform:translateX(-50%);width:340px;height:340px;border-radius:50%;background:var(--tc,#84A59D);opacity:.12;pointer-events:none}
+.type-en{font-family:var(--serif);font-size:13px;letter-spacing:.34em;color:var(--ink-3);text-transform:uppercase}
+.type-motif{width:88px;height:88px;border-radius:50%;background:var(--tc,#84A59D);margin:22px auto 20px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(27,25,22,.14)}
+.type-motif svg{width:44px;height:44px;stroke:#FDFBF7;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.type-name{font-family:var(--serif);font-size:clamp(38px,9vw,52px);font-weight:700;line-height:1.2;letter-spacing:.04em}
+.type-sub{font-size:15px;color:var(--ink-2);margin-top:8px;letter-spacing:.06em}
+.type-attach{display:inline-block;margin-top:16px;font-size:12.5px;letter-spacing:.1em;color:var(--sage-deep);background:var(--sage-tint);border-radius:99px;padding:5px 16px;font-weight:700}
+.type-motto{font-family:var(--serif);font-size:19px;color:var(--ink);margin-top:22px;line-height:1.8}
+.type-strength{margin-top:22px;font-size:13px;color:var(--ink-3)}
+.type-strength b{font-family:var(--serif);font-size:30px;color:var(--tc,#52756D);font-weight:600;vertical-align:-4px}
+.type-base{margin-top:12px;font-size:13.5px;color:var(--ink-2)}
+.type-flat{margin-top:14px;font-size:13px;color:var(--ink-3);background:var(--line-2);border-radius:10px;padding:10px 14px;display:inline-block}
+/* 场景网格 */
+.scene-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+@media(max-width:560px){.scene-grid{grid-template-columns:1fr}}
+.scene-card{background:var(--paper-2);border:1px solid var(--line);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow-s)}
+.scene-card h4{font-size:14px;color:var(--tc,var(--sage-deep));letter-spacing:.08em;font-weight:700;margin-bottom:8px}
+.scene-card p{font-size:14.5px;color:var(--ink-2);line-height:1.85}
+.scene-card .mech{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line-2);font-size:12.5px;color:var(--sage-deep);line-height:1.8}
+.scene-card .mech b{font-weight:700}
+.attach-badge{display:inline-block;font-family:var(--serif);font-size:17px;font-weight:600;color:var(--sage-deep);background:var(--sage-tint);border-radius:12px;padding:8px 18px;margin:10px 0 12px}
+.dist-analysis{font-size:14.5px;color:var(--ink-2);line-height:1.95;margin-top:14px}
+.dist-analysis+.dist-analysis{margin-top:10px}
+/* 分布图 */
+.dist-wrap{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+@media(max-width:560px){.dist-wrap{grid-template-columns:1fr}}
+.dist-card{background:var(--paper-2);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow-s)}
+.dist-card h4{font-size:14px;letter-spacing:.08em;color:var(--ink-2);margin-bottom:4px}
+.dist-card .small{margin-bottom:12px}
+.dbar{display:flex;align-items:center;gap:10px;padding:7px 0}
+.dbar-name{width:56px;flex:none;font-size:13px;color:var(--ink-2)}
+.dbar-track{flex:1;height:10px;background:var(--line-2);border-radius:99px;overflow:hidden}
+.dbar-fill{display:block;height:100%;border-radius:99px;background:var(--sage);transition:width .9s cubic-bezier(.22,1,.36,1)}
+.dbar-val{width:38px;flex:none;font-size:12px;color:var(--ink-3);text-align:right;font-variant-numeric:tabular-nums}
+/* 力量与代价 */
+.pc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+@media(max-width:560px){.pc-grid{grid-template-columns:1fr}}
+.pc-card{border-radius:16px;padding:22px;box-shadow:var(--shadow-s)}
+.pc-card.power{background:var(--sage-tint)}
+.pc-card.cost{background:var(--coral-tint)}
+.pc-card h4{font-size:14px;letter-spacing:.08em;margin-bottom:8px;font-weight:700}
+.pc-card.power h4{color:var(--sage-deep)} .pc-card.cost h4{color:var(--coral)}
+.pc-card p{font-size:14.5px;color:var(--ink-2);line-height:1.85}
+/* 建议 */
+.advice-card{background:var(--paper-2);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow-s)}
+.advice-card li{padding:10px 0 10px 26px;position:relative;color:var(--ink-2);font-size:15px;line-height:1.85;border-bottom:1px dashed var(--line-2);list-style:none}
+.advice-card li:last-child{border-bottom:none}
+.advice-card li::before{content:"";position:absolute;left:4px;top:19px;width:7px;height:7px;border-radius:50%;background:var(--tc,var(--sage))}
+/* 反馈 */
+.fb-row{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap;align-items:center;justify-content:center}
+.fb-label{font-size:13px;color:var(--ink-3);width:100%;margin-bottom:2px;text-align:center}
+.fb-btn{font-family:var(--sans);font-size:13.5px;padding:9px 18px;border-radius:99px;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--ink-2);transition:all .15s}
+.fb-btn:hover{border-color:var(--ink-3)}
+.fb-btn.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.alt-type{margin-top:16px;background:var(--paper-2);border:1px dashed var(--line);border-radius:16px;padding:20px;text-align:center;display:none}
+.alt-type.show{display:block;animation:fadeIn .3s ease}
+/* 维度剖面 */
+.dim-mini{background:var(--paper-2);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow-s)}
+.bar-row{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line-2)}
+.bar-row:last-child{border-bottom:none}
+.bar-name{width:118px;flex:none;font-size:14px;color:var(--ink-2)}
+.bar-track{flex:1;height:10px;background:var(--line-2);border-radius:99px;overflow:hidden}
+.bar-fill{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--sage),var(--sage-deep))}
+.bar-fill.lv1{width:14%}.bar-fill.lv2{width:32%}.bar-fill.lv3{width:52%}.bar-fill.lv4{width:74%}.bar-fill.lv5{width:94%}
+.bar-fill.low{background:var(--ink-3);opacity:.5}
+.bar-lv{width:44px;flex:none;font-size:13px;font-weight:700;color:var(--sage-deep);text-align:right}
+.dim-alt{margin-top:14px;padding:14px 16px;background:var(--coral-tint);border-radius:12px;font-size:13.5px;color:var(--ink-2);line-height:1.8}
+.dim-alt b{color:var(--coral);font-weight:700}
+/* 环境回顾 */
+.env-card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-s);margin-bottom:14px}
+.env-quote{font-family:var(--serif);font-size:17px;line-height:1.9;padding:4px 0 10px}
+/* topics */
+.topics{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.topic-btn{font-family:var(--sans);font-size:14.5px;padding:12px 20px;border-radius:99px;cursor:pointer;border:1px solid var(--line);background:var(--paper-2);color:var(--ink);transition:all .16s;text-align:left}
+.topic-btn:hover{border-color:var(--sage-deep);color:var(--sage-deep);transform:translateY(-2px);box-shadow:var(--shadow-s)}
+.res-actions{display:flex;gap:10px;flex-wrap:wrap;margin:40px 0 20px}
+.footer-note{border-top:1px solid var(--line);margin-top:50px;padding:26px 0 60px;font-size:13px;color:var(--ink-3);line-height:1.9}
+/* deep */
+.deep-block{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow-s);margin-bottom:16px}
+.deep-block h3{margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.deep-block h3 .n{font-family:var(--serif);font-size:14px;color:var(--sage-deep);letter-spacing:.1em}
+.deep-block p{color:var(--ink-2);font-size:15px;line-height:1.95}
+.deep-block p+p{margin-top:10px}
+.deep-block ul{list-style:none}
+.deep-block li{padding:10px 0 10px 24px;position:relative;color:var(--ink-2);font-size:15px;line-height:1.8;border-bottom:1px dashed var(--line-2)}
+.deep-block li:last-child{border-bottom:none}
+.deep-block li::before{content:"";position:absolute;left:4px;top:19px;width:6px;height:6px;border-radius:50%;background:var(--sage)}
+.deep-quote{font-family:var(--serif);font-size:16px;color:var(--ink);background:var(--sage-tint);border-radius:12px;padding:14px 18px;margin:10px 0}
+#toast{position:fixed;left:50%;bottom:34px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--paper);font-size:14px;padding:12px 22px;border-radius:99px;opacity:0;pointer-events:none;transition:all .3s ease;z-index:99;box-shadow:var(--shadow-m);white-space:nowrap}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media print{
+  body{background:#fff}
+  .no-print,.fb-row,.res-actions,.topics,#toast,.alt-type{display:none!important}
+  .type-card,.env-card,.deep-block,.scene-card,.dist-card{box-shadow:none;break-inside:avoid}
+  .bar-fill,.dbar-fill{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="toast"></div>
+<script>
+"use strict";
+/* ================= 基础 ================= */
+const STORE_KEY = "wodechengzhang.v2";
+const FAM = [
+  {v:1,t:"完全没有"},{v:2,t:"很少有"},{v:3,t:"记不清 / 说不清"},{v:4,t:"有些熟悉"},{v:5,t:"非常熟悉"}
+];
+const LIKERT = [
+  {v:1,t:"完全不符合"},{v:2,t:"不太符合"},{v:3,t:"说不清 / 偶尔"},{v:4,t:"比较符合"},{v:5,t:"完全符合"}
+];
+const LV_NAMES = ["低","中低","中","中高","高"];
+function lvOf(s){ return s<2.2?0 : s<2.8?1 : s<3.4?2 : s<4.0?3 : 4; }
+
+/* ================= 第一部分：成长环境再认（16题，不参与定型） ================= */
+const ENV_CATS = {
+  recognition:{name:"情感与认可", label:"「认可」似乎常常和「表现」绑在一起",
+    desc:"你描述的成长环境里，家人对你的态度可能较多地随你的表现而变化。在这样的环境中长大的人，有时会把「被爱」理解成一件需要通过努力去维持的事。"},
+  boundary:{name:"边界", label:"「你的事」和「家里的事」之间的界限比较模糊",
+    desc:"在你的描述中，家人可能较多地参与或接管本该属于你的决定和空间。在这样的环境里，「说不」可能是一件需要付出代价的事。"},
+  emotion:{name:"情绪责任", label:"家里的情绪不太容易预测，需要你察言观色",
+    desc:"你描述的成长环境中，你似乎很早就学会了观察脸色、预判气氛，并据此调整自己。这种「雷达」在当时可能是保护自己的方式。"},
+  conflict:{name:"冲突", label:"冲突很少被真正谈开",
+    desc:"在你描述的家里，矛盾似乎更多是冷处理、不了了之，或以某一方让步告终。在这样的环境中，「表达不同意见」可能是一件有风险的事。"},
+  role:{name:"角色", label:"你比同龄人更早承担了情绪或家庭责任",
+    desc:"你描述的成长经历中，「懂事」「不添麻烦」「照顾家人感受」可能是你很早就熟悉的角色。在这样的环境里，自己的需求常常是最后被考虑的那个。"}
+};
+const PART1 = {
+  id:"env", num:"01", title:"成长的熟悉感",
+  intro:"接下来是一些描述家庭氛围的句子。不需要回忆具体事件——只凭读这句话时的「熟悉感」作答。记不清或不确定，本身也是一种答案。",
+  scale:FAM,
+  questions:[
+    {id:"e1", cat:"recognition", text:"家人对我的态度，会随着我的表现好坏而明显变化。"},
+    {id:"e2", cat:"recognition", text:"即使我做得再好，家里好像永远还有下一个要求。"},
+    {id:"e3", cat:"recognition", text:"我需要一直保持「拿得出手」，才感觉自己在家里有位置。"},
+    {id:"e4", cat:"boundary", text:"我的事情和家里的事情之间，没有一条清晰的界限。"},
+    {id:"e5", cat:"boundary", text:"在家里说「不」，是要付出代价的。"},
+    {id:"e6", cat:"boundary", text:"我的私人空间和隐私，家人觉得有权随时进入。"},
+    {id:"e7", cat:"emotion", text:"我需要观察家人的脸色和语气，来决定自己该怎么做。"},
+    {id:"e8", cat:"emotion", text:"家人不高兴时，我的第一反应是找自己哪里做错了。"},
+    {id:"e9", cat:"emotion", text:"家里什么时候会「变天」，我一直不太摸得准。"},
+    {id:"e10", cat:"conflict", text:"家里的矛盾很少被真正谈开，更多是冷处理或不了了之。"},
+    {id:"e11", cat:"conflict", text:"家人很难承认自己的错误。"},
+    {id:"e12", cat:"conflict", text:"表达不同意见，容易升级成争吵、羞辱或关系威胁。"},
+    {id:"e13", cat:"role", text:"我从小就被要求「懂事」，不能给家里添麻烦。"},
+    {id:"e14", cat:"role", text:"家人会向我倾诉他们的烦恼，包括他们彼此之间的矛盾。"},
+    {id:"e15", cat:"role", text:"我很少能在家人面前表现出脆弱或需要帮助。"},
+    {id:"e16", cat:"role", text:"我的需求，经常要为家里其他人的需求让路。"}
+  ]
+};
+/* ================= 第二部分：当前模式（混合题型 44题） ================= */
+const DIM_NAMES = {monitor:"他人情绪监测",validation:"外部评价依赖",boundary:"边界困难",conflict:"冲突回避",needs:"自我需求识别困难",criticism:"批评敏感",independence:"过度独立",control:"控制感需求"};
+const PART2 = { num:"02", title:"我现在的样子",
+  blocks:[
+  { kind:"lk", intro:"这一部分关于你现在的反应方式。根据最近一两年的真实情况作答，而不是「理想中的自己」。", items:[
+    {id:"p1", dim:"monitor", text:"我很容易察觉别人语气和表情的细微变化。"},
+    {id:"p2", dim:"monitor", text:"别人不开心时，我会先检查是不是自己造成的。"},
+    {id:"p3", dim:"monitor", rev:1, text:"别人情绪不好时，我能安心做自己的事，不受影响。"},
+    {id:"p4", dim:"validation", text:"得到别人认可时，我才比较容易感到自己有价值。"},
+    {id:"p5", dim:"validation", text:"被批评之后，我的自我评价会明显下降。"},
+    {id:"p6", dim:"validation", rev:1, text:"即使没人看到或肯定，我也能确定自己做了一件好事。"},
+    {id:"p7", dim:"boundary", text:"我不太容易拒绝别人的请求。"},
+    {id:"p8", dim:"boundary", text:"拒绝别人之后，我会内疚很久。"},
+    {id:"p9", dim:"boundary", rev:1, text:"不是我的责任，我能心安理得地不揽。"},
+    {id:"p10", dim:"conflict", text:"有分歧时，我倾向于先妥协。"},
+    {id:"p11", dim:"conflict", text:"我非常害怕让别人失望。"},
+    {id:"p12", dim:"conflict", rev:1, text:"必要时，我能平静地和人把矛盾摊开说清楚。"},
+    {id:"p13", dim:"needs", text:"我不太确定自己真正想要什么。"},
+    {id:"p14", dim:"needs", text:"一个人独处时，我常常不知道自己想干什么。"},
+    {id:"p15", dim:"needs", rev:1, text:"做选择时，我通常很清楚自己的偏好。"},
+    {id:"p16", dim:"criticism", text:"别人普通的反馈意见，我容易体验成对我的否定。"},
+    {id:"p17", dim:"criticism", text:"被批评之后，这件事会在我脑子里反复出现很久。"},
+    {id:"p18", dim:"criticism", rev:1, text:"「这件事没做好」和「我这个人不好」，我能分得很清。"},
+    {id:"p19", dim:"independence", text:"我很难开口向别人求助。"},
+    {id:"p20", dim:"independence", text:"我不喜欢欠别人人情。"},
+    {id:"p21", dim:"independence", rev:1, text:"遇到困难时，向人求助对我来说很自然。"},
+    {id:"p22", dim:"control", text:"不确定的情况容易让我焦虑。"},
+    {id:"p23", dim:"control", text:"别人临时改变计划会让我很不舒服。"},
+    {id:"p24", dim:"control", rev:1, text:"计划被打乱时，我通常能随它去。"}
+  ]},
+  { kind:"sc", intro:"接下来是几个具体场景。别想太多，选你「最可能」的第一反应。", items:[
+    {id:"s1", text:"关系不错的朋友两天没回你消息：", opts:[
+      {t:"回放最近的聊天，想是不是哪句说错了", dim:"criticism"},
+      {t:"该干嘛干嘛，他需要时自然会说", dim:null},
+      {t:"担心他那边是不是出了什么事", dim:"monitor"},
+      {t:"有点受伤，等他先主动联系我", dim:"independence"}]},
+    {id:"s2", text:"领导在会上说：「最近有些人的工作质量在下滑」——没点名。", opts:[
+      {t:"立刻对号入座，回忆自己最近的表现", dim:"criticism"},
+      {t:"接下来把工作做得更漂亮，证明不是我", dim:"validation"},
+      {t:"观察领导的语气表情，判断他到底在说谁", dim:"monitor"},
+      {t:"没点名就与我无关", dim:null}]},
+    {id:"s3", text:"伴侣生气了，摔门进了房间。", opts:[
+      {t:"跟进去安抚，先让对方消气", dim:"conflict"},
+      {t:"在门外复盘今天到底发生了什么", dim:"monitor"},
+      {t:"给彼此一点空间，都先冷静", dim:null},
+      {t:"心凉半截，开始想这段关系还要不要继续", dim:"independence"}]},
+    {id:"s4", text:"同事把本属于他的工作推给了你。", opts:[
+      {t:"接下来再说，别伤了和气", dim:"boundary"},
+      {t:"直接说明这不是我的工作", dim:null},
+      {t:"接下来，但心里记上一笔", dim:"conflict"},
+      {t:"接下来，而且要做到最好", dim:"validation"}]},
+    {id:"s5", text:"周末突然空出一整天，没有任何安排。", opts:[
+      {t:"有点慌，赶紧找点事把时间填上", dim:"control"},
+      {t:"问问别人都有什么安排，再决定自己干嘛", dim:"needs"},
+      {t:"很舒服，终于可以自己待着", dim:null},
+      {t:"想做点什么，但翻来覆去不知道自己真正想做什么", dim:"needs"}]},
+    {id:"s6", text:"你做的东西被当众指出一个错误。", opts:[
+      {t:"表面平静，回去反复想了一晚上", dim:"criticism"},
+      {t:"担心大家因此质疑我的能力", dim:"validation"},
+      {t:"记下来，改正就好", dim:null},
+      {t:"懊恼自己为什么没有提前检查出来", dim:"control"}]},
+    {id:"s7", text:"好朋友遇到难处，你没帮上什么忙。", opts:[
+      {t:"内疚很久，总觉得应该再多做点什么", dim:"boundary"},
+      {t:"之后对他更好一些，作为弥补", dim:"conflict"},
+      {t:"我尽力了，这件事不怪我", dim:null},
+      {t:"提醒他下次可以更早点跟我说", dim:"independence"}]},
+    {id:"s8", text:"深夜和喜欢的人聊天，对方突然不回了。", opts:[
+      {t:"盯着对话框，反复看自己最后一句", dim:"monitor"},
+      {t:"开始担心是不是自己太热情了", dim:"criticism"},
+      {t:"手机一放就睡", dim:null},
+      {t:"把对话删了，假装没发生过", dim:"independence"}]},
+    {id:"s9", text:"团队合作里出了明显的错误，没人认领。", opts:[
+      {t:"虽然不是我，我主动出来补救", dim:"boundary"},
+      {t:"先排查是不是我的环节出了问题", dim:"monitor"},
+      {t:"不是我做的，我不说话", dim:null},
+      {t:"担心被指认，提前准备好解释", dim:"conflict"}]},
+    {id:"s10", text:"你很想尝试一个新方向（换工作 / 学新东西）。", opts:[
+      {t:"先查资料、做完整计划，再开始", dim:"control"},
+      {t:"问问身边人的意见，多数支持就去做", dim:"needs"},
+      {t:"想做就试了", dim:null},
+      {t:"怕做不好被人笑话，再等等", dim:"validation"}]},
+    {id:"s11", text:"聚会上你说了个观点，没人接话。", opts:[
+      {t:"瞬间尴尬，之后整晚都在回想那一刻", dim:"criticism"},
+      {t:"赶紧补一句把场子圆回来", dim:"conflict"},
+      {t:"观察大家的表情，判断是不是说错了", dim:"monitor"},
+      {t:"没人在意，继续听别人聊", dim:null}]},
+    {id:"s12", text:"家人或伴侣没问过你，就替你做主安排了一件事。", opts:[
+      {t:"算了，按他们说的来吧", dim:"boundary"},
+      {t:"心里不舒服，但不会说出口", dim:"conflict"},
+      {t:"明确说：这件事我想自己决定", dim:null},
+      {t:"先答应下来，之后自己默默改掉", dim:"independence"}]}
+  ]},
+  { kind:"pair", intro:"最后几道：二选一，选更贴近你的那个。", items:[
+    {id:"f1", text:"哪个更让你难受？", opts:[{t:"被批评", dim:"criticism"},{t:"被无视", dim:"validation"}]},
+    {id:"f2", text:"哪个更难做到？", opts:[{t:"拒绝别人", dim:"boundary"},{t:"开口求助", dim:"independence"}]},
+    {id:"f3", text:"哪个更让你焦虑？", opts:[{t:"计划被打乱", dim:"control"},{t:"别人情绪不好", dim:"monitor"}]},
+    {id:"f4", text:"你更常是哪一种？", opts:[{t:"委屈自己，保住关系", dim:"conflict"},{t:"宁可疏远，也不将就", dim:"independence"}]},
+    {id:"f5", text:"做选择时你更怕哪个？", opts:[{t:"选错", dim:"needs"},{t:"被人评价", dim:"validation"}]},
+    {id:"f6", text:"哪个场景更消耗你？", opts:[{t:"一场气氛压抑的饭局", dim:"monitor"},{t:"一次躲不开的争执", dim:"conflict"}]},
+    {id:"f7", text:"哪个更像你脑内的声音？", opts:[{t:"不停回放发生过的事", dim:"criticism"},{t:"不停安排下一步的事", dim:"control"}]},
+    {id:"f8", text:"哪句话更难说出口？", opts:[{t:"「我想要」", dim:"needs"},{t:"「我不想」", dim:"boundary"}]}
+  ]}
+]};
+/* ================= 八种类型 ================= */
+const MOTIFS = {
+  watcher:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.6"/><path d="M12 12 L19 5"/><path d="M8.5 8.5a5 5 0 0 1 7 0"/><path d="M5.5 5.5a9.5 9.5 0 0 1 13 0"/><path d="M15.5 15.5a5 5 0 0 1-7 0" opacity=".45"/></svg>',
+  student:'<svg viewBox="0 0 24 24"><path d="M12 4l2.2 4.6 5 .6-3.7 3.4 1 4.9-4.5-2.5-4.5 2.5 1-4.9L4.8 9.2l5-.6z"/></svg>',
+  echo:'<svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 13.6-5.7"/><path d="M20 12a8 8 0 0 1-13.6 5.7"/><path d="M8 12a4 4 0 0 1 6.8-2.8" opacity=".6"/><circle cx="12" cy="12" r="1.2"/></svg>',
+  caring:'<svg viewBox="0 0 24 24"><path d="M12 4c4.5 0 8 3 8.5 6.5h-17C4 7 7.5 4 12 4z"/><path d="M12 10.5v6a2.5 2.5 0 0 1-5 0" opacity=".8"/><path d="M5 10.5l-.8 1.5M19 10.5l.8 1.5" opacity=".5"/></svg>',
+  indep:'<svg viewBox="0 0 24 24"><path d="M4 17c2-1.5 4-1.5 6 0s4 1.5 6 0 3-1.2 4-.5" opacity=".55"/><path d="M12 5v8"/><path d="M12 5l5 8h-5z"/><path d="M8 20h8" opacity=".4"/></svg>',
+  order:'<svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 10l1.5 1.5L14 8" /><path d="M9 15h6" opacity=".6"/><path d="M5 9.5h14" opacity=".35"/></svg>',
+  contra:'<svg viewBox="0 0 24 24"><path d="M5 9h10l-2.5-2.5"/><path d="M19 15H9l2.5 2.5"/><circle cx="12" cy="12" r="1.1" opacity=".5"/></svg>',
+  fire:'<svg viewBox="0 0 24 24"><rect x="9" y="8" width="6" height="12" rx="2.5"/><path d="M12 8V5h4"/><path d="M16 5c1.5 0 2.5 1 2.5 2.5" opacity=".6"/><path d="M11 12.5h2" opacity=".5"/></svg>'
+};
+const TYPES = {
+  watcher:{name:"守望者", sub:"警觉-安抚型", en:"THE WATCHER", attach:"焦虑型主线", color:"#6E968E", dim:"monitor",
+    motto:"我先读懂空气，再决定怎么做。",
+    narrative:"你习惯先人一步察觉周围的变化：谁不高兴了、气氛哪里不对、接下来可能发生什么。这种「雷达」可能曾经是保护自己的方式——先知道，就先安全。只是它常常没有开关，别人的情绪容易变成你的任务。",
+    scenes:{
+      love:{b:"对方语气稍微一变，你就开始检索自己哪里做错了；争吵还没发生，收场方式已经演练了三遍。",
+            m:"依恋系统被激活时，你优先修复对方的情绪——因为对你而言，对方平静才等于自己安全。"},
+      work:{b:"领导的脸色比 KPI 更影响你的一天；会议气氛一沉，你会下意识想救场。",
+            m:"你把权威人物的情绪当作环境安全指数——这是童年「看脸色行事」向职场的平移。"},
+      friend:{b:"聚会结束后，你会回放全场细节，确认没有人被冷落、没有人对你有意见。",
+            m:"持续的环境扫描属于「过度警觉」：曾经用来提前避险，现在成了无法关闭的后台进程。"},
+      self:{b:"终于没有人需要观察了，你却一下子不知道该怎么和自己待着。",
+            m:"注意力长期外放，指向自己的通道很少被使用——不是你不想，是这条回路用得少。"}},
+    power:"你的共情力和观察力是真实的——你大概是朋友圈里「最会照顾人感受」的那个。",
+    cost:"雷达常年开着非常耗电；别人的情绪，被你默默扛成了自己的。",
+    advice:["察觉别人情绪后，多问一步：「这是他的情绪，还是我的责任？」","每天留一段「雷达关机」时间，做一件只关于自己的事。"]},
+  student:{name:"好学生", sub:"表现证明型", en:"THE ACHIEVER", attach:"焦虑型主线", color:"#C99A45", dim:"validation",
+    motto:"做得好，才配被喜欢。",
+    narrative:"你习惯用表现换安心：成绩、业绩、别人的肯定，是你确认「我值得」的方式。如果认可曾经是有条件的，优秀就会从选择变成必须。你可能已经很出色了，但内心的满足总是很短。",
+    scenes:{
+      love:{b:"你容易把「被爱」理解成「我要足够好」，吵架时先检讨自己够不够称职。",
+            m:"权变性自尊：自我价值取决于最近一次的评价，而不是稳定地认定「我值得」。"},
+      work:{b:"一句表扬能顶半天能量，一句批评能毁掉一整个周末。",
+            m:"评价与你的自我概念直接挂钩，批评被体验为「自我价值的变动」，而不只是工作反馈。"},
+      friend:{b:"你不太敢展示「没用」的一面，朋友圈里的你也像在执行某种标准。",
+            m:"「被喜欢＝表现好」的等式，让你回避一切可能「扣分」的暴露。"},
+      self:{b:"闲下来会有隐隐的负罪感，好像不产出点什么就亏了。",
+            m:"休息不产生「价值证据」，于是被系统标记为「不配」。"}},
+    power:"自律、靠谱、执行力强——这些能力是真的，不是幻觉。",
+    cost:"你的价值感外置了，遥控器握在别人手里。",
+    advice:["做一件「不为任何评价」的小事，并忍住不发给任何人看。","被批评时问自己：这句话是事实，还是我的价值感受又启动了？"]},
+  echo:{name:"回声者", sub:"批评反刍型", en:"THE ECHO", attach:"焦虑型主线", color:"#9B8AA5", dim:"criticism",
+    motto:"一句话，在我心里重播很多遍。",
+    narrative:"负面反馈在你心里停留的时间，可能比说出它的人想象中长得多。一句随口的话会在深夜准时重播，而且越播越清晰。这不代表你玻璃心——如果否定曾经和羞耻绑在一起，大脑就会把每句批评都当成需要反复处理的警报。",
+    scenes:{
+      love:{b:"对方一句无心的话，你能失眠到半夜，第二天他却完全不记得。",
+            m:"拒绝敏感性：对否定信号的阈值低、加工深，小刺激被放大为关系警报。"},
+      work:{b:"修改意见你听成的是「你不行」；方案改十遍，其实是在处理那句话带来的难受。",
+            m:"对事的批评和对人的否定之间缺少防火墙——这是羞耻倾向的典型表现。"},
+      friend:{b:"聚会上一个冷场，你会认定是自己造成的，并回放很多遍。",
+            m:"负面事件的归因偏向自己：自责也是一种获得「可控感」的方式。"},
+      self:{b:"安静的时候，回声最大。",
+            m:"反刍是大脑试图「消化」未处理威胁的方式——但重复回想并不等于处理。"}},
+    power:"你对自己要求高、复盘能力强——用对了地方，这是成长的利器。",
+    cost:"反刍不是复盘：复盘产出结论，反刍只产出疲惫。",
+    advice:["给「重播」设一个时限：可以想，但只想到今晚十点。","把听到的话拆成两栏：事实是什么，我的解读是什么。"]},
+  caring:{name:"懂事者", sub:"照顾者型", en:"THE CARETAKER", attach:"焦虑型主线", color:"#CD9078", dim:"needs",
+    motto:"我没事，你们先。",
+    narrative:"你好像很早就学会了把自己往后排：先照顾别人的情绪，先满足别人的需求，「我想要什么」这个问题则越来越陌生。你可能很擅长照顾人，却不太擅长被照顾——甚至别人对你好时，会有点不知所措。",
+    scenes:{
+      love:{b:"你记得对方所有喜好，却说不清自己喜欢什么；委屈通常以「没事」结束。",
+            m:"长期扮演照顾者，注意力的训练方向是「别人需要什么」，自我感知的通道相应萎缩。"},
+      work:{b:"你是有求必应的那个；自己的需求，开会之前就被自己划掉了。",
+            m:"亲职化的延续：价值感建立在「被需要」上，拒绝等于亲手拆掉自己的位置。"},
+      friend:{b:"你是大家的树洞，但你的烦恼很少被听见——因为你不说。",
+            m:"表达需求曾经被视为「添麻烦」，于是你学会了单向输出照顾。"},
+      self:{b:"没有人需要照顾的时候，你反而有点空。",
+            m:"当「照顾者」是主要身份，独处就失去了现成的剧本。"}},
+    power:"你的体贴和责任感是真实的，很多人因你而被好好对待过。",
+    cost:"长期把自己排在最后，会累，也会委屈——只是你习惯不承认。",
+    advice:["下次说「我都可以」之前，停三秒，问一次自己真的可以吗。","练习接受一次别人的照顾，什么都不用还。"]},
+  indep:{name:"独立者", sub:"反依赖型", en:"THE LONE SAILOR", attach:"疏离型主线", color:"#7A93A8", dim:"independence",
+    motto:"我自己来。",
+    narrative:"你的策略是反方向的：与其指望别人之后失望，不如一开始就谁都不指望。求助对你来说是高成本动作，欠人情要赶紧还清，别人靠太近反而有压力。这不是冷漠——如果依靠曾经没有用，独立就是当时最聪明的决定。",
+    scenes:{
+      love:{b:"你可以爱一个人，但很难「需要」一个人；对方想照顾你，你下意识说不用。",
+            m:"反依赖：表达需求曾与失望绑定，于是「不需要」成了最安全的姿势。"},
+      work:{b:"宁可加班到凌晨，也不开口问一个十分钟能解决的问题。",
+            m:"求助在你的系统里被定价为「暴露弱点」，自己扛则被标记为「零风险」。"},
+      friend:{b:"你是被求助的那个，几乎从不是求助的那个。",
+            m:"单向的关系结构让你维持掌控感，避免「欠」带来的不安。"},
+      self:{b:"独处是你的舒适区，但有时舒适和孤独很难区分。",
+            m:"自我封闭既是选择也是习惯——身体已经分不清两者。"}},
+    power:"抗压能力和执行力一流，你是那种「天塌了也顶得住」的人。",
+    cost:"什么都自己扛，意味着累的时候，也没有人知道该来接你。",
+    advice:["从一件极小的事开始练习求助，观察对方其实不会嫌你麻烦。","试着区分：「我不想麻烦他」和「我不敢需要他」。"]},
+  order:{name:"秩序者", sub:"失控焦虑型", en:"THE PLANNER", attach:"疏离型主线", color:"#B0875B", dim:"control",
+    motto:"一切最好都在计划之内。",
+    narrative:"你通过掌控感获得安全：提前安排、预案齐全、节奏在握。不确定是焦虑的来源，临时变动近乎一种冒犯。如果早年的环境曾经难以预测，「把一切都安排好」就是你为自己建的秩序。它很有效——只是失控的瞬间，你会比别人更晃。",
+    scenes:{
+      love:{b:"对方一句「到时候再说」，能让你不安一晚上。",
+            m:"不确定性不耐受：模糊本身被体验为威胁，而不是中性状态。"},
+      work:{b:"你是流程和备份方案之神；突发状况对你心态的打击，大于事情本身。",
+            m:"你的安全感建在「可预测」之上，计划崩了等于地面晃了。"},
+      friend:{b:"临时改时间的聚会，你嘴上说没事，心里需要重新适应很久。",
+            m:"变动要求你重新建模世界——这个计算量对别人很小，对你很大。"},
+      self:{b:"日程表总是满的，空白让你不安。",
+            m:"填满日程，是对不确定性的一种预防性控制。"}},
+    power:"靠谱、缜密、抗风险——大家把重要的事交给你，不是没有原因的。",
+    cost:"世界不总按计划运行，你为「确定感」支付的精力很昂贵。",
+    advice:["每周留一件「不计划」的小事，练习和不确定共处。","焦虑袭来时问自己：是真的失控了，还是只是和计划不一样？"]},
+  contra:{name:"矛盾者", sub:"矛盾依恋型", en:"THE PUSH-PULL", attach:"恐惧-矛盾型主线", color:"#A87F8F", dim:"contra",
+    motto:"我想靠近，又随时准备离开。",
+    narrative:"你在关系里像踩着两扇门：一扇通向靠近，一扇通向撤离。渴望亲密是真的，不安全时想先走也是真的——先离开的人，不会「被离开」。这种推拉不是作，它常常意味着：你最早学到的亲密，本身就伴随着不确定。",
+    scenes:{
+      love:{b:"关系一近你就想退，一退远你又想念；对方常常搞不懂你要什么——有时你自己也不知道。",
+            m:"恐惧型依恋的核心：靠近激活「会受伤」的警报，远离激活「被抛弃」的警报，两个警报轮流值班。"},
+      work:{b:"你既能敏锐察觉办公室的氛围，又拒绝真正卷入任何圈子。",
+            m:"监测但不依附：获取信息的同时，把情感暴露降到零。"},
+      friend:{b:"有人靠近时，你会下意识寻找他「不可靠的证据」。",
+            m:"预先寻找退出理由，是在为「先离开」准备心理预案。"},
+      self:{b:"想有人陪，但真有人陪了又累。",
+            m:"亲密对你同时是需求和威胁——满足任一边，都会触发另一边。"}},
+    power:"你对关系风险的嗅觉很灵，也很难被真正困住。",
+    cost:"反复推拉消耗自己，也消耗别人；想要的安全感，好像永远在对面。",
+    advice:["想撤离时先停一晚：这个动作是在保护我，还是在重复旧程序？","试着对一个安全的人说一次：「我需要你，但这让我有点害怕」。"]},
+  fire:{name:"消防员", sub:"冲突回避型", en:"THE PEACEKEEPER", attach:"恐惧-矛盾型主线", color:"#C96F5F", dim:"conflict",
+    motto:"别吵，我来处理。",
+    narrative:"你是关系里的灭火系统：哪里有火星，你第一时间扑向哪里。分歧让你紧张，冷场让你内疚，哪怕错不在你，你也会先递出台阶。如果冲突曾经意味着失控，那么「让一切尽快恢复平静」就是你学会的第一反应。",
+    scenes:{
+      love:{b:"对方一提高音量你就开始退让；争吵后你总是先低头的那个，哪怕你有理。",
+            m:"冲突被你的神经系统标记为「关系存亡事件」——平息它比赢得它重要得多。"},
+      work:{b:"跨部门的矛盾你也会不自觉去调和；拒绝和争执对你都是高耗能事件。",
+            m:"你把环境中的张力自动登记为自己的待办——这是「情绪责任」的扩大化。"},
+      friend:{b:"朋友之间有摩擦，你是默认的调停人；只是没人调停你自己的委屈。",
+            m:"安抚他人是你最熟练的冲突生存技能，熟练到成了默认角色。"},
+      self:{b:"冲突结束后，别人翻篇了，你还在回放。",
+            m:"警报解除了，但应激激素还没代谢完——身体比理智慢半拍。"}},
+    power:"同理心和场面掌控力出色，有你在的地方很少真正撕破脸。",
+    cost:"火灭了，烟留在你肺里。长期回避冲突，委屈是会记账的。",
+    advice:["下次想说「算了」时，试着换成「我们谈谈」——从低风险的人开始。","区分「真正的和平」和「被推迟的冲突」。"]}
+};
+const DIM2TYPE = {monitor:"watcher", validation:"student", criticism:"echo", needs:"caring", independence:"indep", control:"order", boundary:"fire", conflict:"fire"};
+const ANXIOUS_DIMS = ["monitor","validation","criticism","needs","boundary"];
+const BASE_TEXT = {
+  monitor:"同时，你对别人的情绪变化格外敏感，习惯先观察、再行动。",
+  validation:"同时，外界的评价对你有不小的分量，认可与否会明显影响你的状态。",
+  boundary:"同时，「拒绝」对你仍有难度，你容易把别人的事揽成自己的。",
+  conflict:"同时，你本能地回避冲突，习惯用退让换取平静。",
+  needs:"同时，你对自己的真实需求有些模糊，习惯先想别人要什么。",
+  criticism:"同时，批评在你心里停留的时间偏长，容易变成对整个人的怀疑。",
+  independence:"同时，你有很强的独立倾向，不习惯求助和依靠。",
+  control:"同时，你对确定性的需求偏高，计划被打乱会明显影响心情。"
+};
+const ALT_NOTE = "类型只是对你当前模式的一种概括，不构成诊断。这些模式可能与成长环境有关，也可能与当前压力、近期经历、天生气质等因素有关——如果哪部分与你的感受不符，请以你的感受为准。";
+/* 依恋分析 */
+const ATTACH_A = {
+  anx:{badge:"焦虑型（专注型）依恋倾向",
+    text:"你倾向于通过靠近和确认来获得安全感：关系里的一点风吹草动都可能激活警报，驱使你去确认、安抚或表现。这种模式常与早期「不稳定但非缺席」的回应有关——爱不是不在，而是时有时无、需要争取，于是「被回应」变得格外重要。",
+    power:"对关系信号的敏感让你体贴、忠诚、善于维系关系——你很少让身边的人感到被忽略。",
+    cost:"安全感的开关在对方手里：回应慢一点，你就多熬一点。大量精力被花在「确认关系没事」上。"},
+  avo:{badge:"疏离型（回避型）依恋倾向",
+    text:"你倾向于通过保持距离来获得安全感：不轻易需要谁，也不轻易被谁需要。这种模式常与早期「依靠别人没有用」的经验有关——需求被忽略或被打回，于是「自己来」成了默认设置。",
+    power:"情绪稳定、独立抗压、在危机中靠得住——你不容易被关系的风波掀翻。",
+    cost:"亲密需要一点「相互麻烦」，而你的系统把「麻烦别人」标记为危险——关系容易停在安全的浅水区。"},
+  fear:{badge:"恐惧-矛盾型依恋倾向",
+    text:"靠近和远离的拉力在你身上都很强：渴望亲密，又不信任亲密。这种模式常与一种早期处境有关——「想依靠的人」同时也是「让人不安的人」，亲近和安全没有绑在一起。",
+    power:"你对关系的微妙变化极其敏锐，很难被表象蒙蔽；独处和相处，你都有经验。",
+    cost:"内耗偏大：想靠近又怕受伤，想离开又怕失去——关系对你而言很少是「省力」的。"},
+  secure:{badge:"相对安全的依恋倾向",
+    text:"你较能自然地靠近别人，也能承受分离和分歧。这不代表你没有困扰，而是你修复安全感的通道相对通畅。",
+    power:"关系对你而言更多是滋养，而非消耗。",
+    cost:"可以留意的是：在压力特别大的时期，旧有的模式仍可能短暂浮现。"}
+};
+/* 创伤反应（4F）分析 */
+const FF_A = {
+  "讨好":{text:"压力下你的首选通道是「让对方好起来」：安抚、退让、优先满足期待。在曾经的环境里，这可能是最快恢复安全的方式；代价是你的立场和需求经常被让渡出去。",
+    power:"快速降温、维系关系的能力一流。",
+    cost:"每灭一次火，都在悄悄记一笔委屈的账。"},
+  "逃离":{text:"压力下你的首选通道是撤离：离开现场、心理抽离、让自己忙起来。它让你免于被困住，但也可能让问题悬而未决。",
+    power:"不容易被卷入，始终保有退路。",
+    cost:"问题并没有消失，只是换了个地方等你。"},
+  "僵住":{text:"压力下你的首选通道是「卡住」：脑子空白、反复回想、行动暂停。这是系统过载时的保护性停机；代价是外界看来你「没反应」，而内部其实已经翻江倒海。",
+    power:"避免了冲动反应，观察往往更充分。",
+    cost:"内耗严重，行动的窗口期常常被错过。"},
+  "对抗":{text:"压力下你的首选通道是夺回控制：解释、纠正、推进解决。它让你保有行动力，但也可能让冲突升级，或让对方感到被攻击。",
+    power:"直面问题，推动力强。",
+    cost:"有时赢了道理，输了关系。"},
+  flat:{text:"四个通道的占比接近——你的应激反应比较灵活，会按情境切换策略，没有被单一模式锁死。",
+    power:"工具箱是全的，适应性更强。",
+    cost:"灵活也意味着没有哪条路被充分打磨。"}
+};
+/* ================= 深入探索（11个主题） ================= */
+const DEEP_TOPICS = [
+{id:"fear-disappoint", title:"为什么我这么害怕别人失望？", dims:["conflict","monitor"],
+ questions:[
+  "别人对我表达失望时，我会有强烈的羞耻或恐慌感。",
+  "我经常为了「不让别人失望」而做我本不想做的事。",
+  "让别人失望，比让自己委屈更让我难受。",
+  "我会提前设想对方可能的期待，并努力先去满足它。",
+  "当别人说「我对你很失望」时，我会立刻想要弥补。",
+  "我很难分清「对方失望了」和「我做错了」。",
+  "我对重要的人（父母、伴侣、领导）的期待格外敏感。",
+  "满足不了别人的期待时，我会怀疑自己的价值。",
+  "我很少让别人承担「他们自己失望」的情绪。",
+  "即使对方的要求不合理，拒绝后我也会反复不安。"
+ ],
+ path:[
+  "如果在一个人的成长中，「让家人失望」曾经带来真实的代价——冷脸、指责、收回关爱——那么「不让人失望」就可能从一种选择，慢慢变成一种必须。",
+  "这种模式下，别人的期待会被放在自己的感受之前。久而久之，「别人会不会失望」可能比「我愿不愿意」更早进入你的决策。"
+ ],
+ watch:[
+  "当别人失望时，我能否先问自己：这件事真的是我的责任吗？",
+  "我有没有允许过别人「对我失望」，而不去立刻弥补？",
+  "我害怕的到底是「对方失望」，还是「失望之后会发生的什么」？",
+  "如果我不去满足这个期待，最坏的结果是什么？它真的会发生吗？"
+ ]},
+{id:"hard-to-refuse", title:"为什么我很难拒绝别人？", dims:["boundary"],
+ questions:[
+  "面对别人的请求，「不」字对我来说很难说出口。",
+  "拒绝别人之后，我会反复回想对方的反应。",
+  "我常常先答应下来，之后才意识到自己并不想做。",
+  "我担心拒绝会让别人觉得我不够好、不够朋友。",
+  "即使自己已经很累，我也很难推掉别人拜托的事。",
+  "拒绝之后，我有时会主动用别的方式「补偿」对方。",
+  "我很难区分「合理的请求」和「越界的要求」。",
+  "别人语气强硬一点，我就更容易让步。",
+  "我很少为自己争取「我不想做」的权利。",
+  "拒绝别人后，内疚感会持续很久。"
+ ],
+ path:[
+  "如果在成长中，说「不」曾经意味着冲突、惩罚或「你不孝顺」，那么「答应」就可能成为一种习惯化的自我保护。",
+  "这种模式下，拒绝不只是一个选择，而是被体验成一种风险。于是「同意」变成了默认选项——即使代价是自己的时间和精力。"
+ ],
+ watch:[
+  "我答应一件事之前，有没有停顿一下，问自己「我真的愿意吗」？",
+  "我拒绝之后的内疚，是来自当下这件事，还是来自某种更早的熟悉感？",
+  "对我来说，「被喜欢」和「被尊重」哪个更重要？",
+  "如果角色互换，对方拒绝我，我会觉得他很过分吗？"
+ ]},
+{id:"not-enough", title:"为什么我总觉得自己不够好？", dims:["validation","criticism"],
+ questions:[
+  "即使做得不错，我也倾向于看到「还不够好的部分」。",
+  "取得成绩后，满足感很快就会消失，接着是「下一个目标」。",
+  "我常常拿自己的短处和别人的长处比较。",
+  "别人夸我时，我的第一反应是「他们只是客气」或「还不了解我」。",
+  "我心里好像有一个永远达不到的标准。",
+  "犯错之后，我会用很严厉的话评价自己。",
+  "我很难真正为自己的成就感到骄傲。",
+  "「我还不够好」的感觉，和我实际做得怎样关系不大。",
+  "休息时，我常有一种「我没资格休息」的感觉。",
+  "我害怕别人「发现」我其实没有看上去那么好。"
+ ],
+ path:[
+  "如果在成长中，肯定是有条件的、稀缺的，而「不够好」是被反复强调的，那么人就可能内化出一个永远不满意的声音。",
+  "这个声音最初可能来自外部，但久而久之会变成自己的——即使已经没有人再批评你，你也会替他们继续。"
+ ],
+ watch:[
+  "我心里那个「不够好」的标准，最初像是谁的声音？",
+  "如果我的朋友做到我这样，我会怎么评价他？",
+  "我能不能说出三件「我做到了，并且不需要更好」的事？",
+  "当我对自己说「不够好」时，我真正害怕失去的是什么？"
+ ]},
+{id:"overthinking", title:"为什么我这么容易内耗？", dims:["criticism","monitor"],
+ questions:[
+  "一件小事，我能在脑子里反复想很久。",
+  "说错一句话后，我会不断回放那个场景。",
+  "做决定前，我会把各种可能性想到筋疲力尽。",
+  "夜里安静的时候，脑子反而停不下来。",
+  "我经常为「还没发生、也可能不会发生」的事担心。",
+  "别人一句无心的话，我能琢磨出好几种意思。",
+  "做完决定后，我还是会怀疑「是不是选错了」。",
+  "内耗严重时，我会感到明显的疲惫甚至身体紧绷。",
+  "我很难「想开就放下」，即使理智上知道没必要。",
+  "反复思考让我感觉「在做准备」，虽然实际上什么都没推进。"
+ ],
+ path:[
+  "如果成长环境是不可预测的——不知道下一刻会发生什么、谁会不高兴——那么「提前把所有可能想一遍」就可能是一种演练出来的防御。",
+  "反复思考在当时可能真的帮你在心里「预演危险」。只是到了安全的环境里，这套系统可能还在过度运转，把日常小事也当成需要排雷的现场。"
+ ],
+ watch:[
+  "我反复想一件事时，是真的在找答案，还是在找「确定感」？",
+  "这个担心，是当下真实存在的，还是某种熟悉的旧感觉？",
+  "如果我把想的时间用来睡一觉或走一走，会怎样？",
+  "我能不能给「担心」限定一个时间，到点就暂停？"
+ ]},
+{id:"self-doubt", title:"为什么我很难相信自己的判断？", dims:["needs"],
+ questions:[
+  "做决定时，我总需要再问几个人的意见。",
+  "即使已经有了答案，我也容易因为别人一句话而动摇。",
+  "我常常觉得「别人比我更清楚什么对我好」。",
+  "事后证明我对了，我也倾向于归因为「运气好」。",
+  "我很难区分「我的直觉」和「我的焦虑」。",
+  "面对重要选择，我更怕「选错」，而不是期待「选对」。",
+  "我常常等到「不得不选」时才做决定。",
+  "别人自信的表达，很容易让我怀疑自己的判断。",
+  "我做过的事，之后还会反复怀疑当时是不是做错了。",
+  "我很少对自己说「这件事我判断得不错」。"
+ ],
+ path:[
+  "如果在成长中，你的判断经常被否定、被纠正、被「我这都是为你好」覆盖，那么「相信自己」就可能是一件没有被充分练习过的事。",
+  "久而久之，做决定时的第一冲动可能不是「我想要什么」，而是「正确答案是什么」——因为「自己的答案」曾经是不被允许的。"
+ ],
+ watch:[
+  "上次我凭自己判断做成的一件事是什么？我允许自己承认它吗？",
+  "当我寻求别人意见时，我是想听新信息，还是想让别人替我承担后果？",
+  "我能不能做一些「错了也没关系」的小决定，来练习信任自己？",
+  "我动摇的时刻，通常面对的是什么样的人？这说明了什么？"
+ ]},
+{id:"caretaker", title:"为什么我总是在关系里照顾别人？", dims:["needs","boundary"],
+ questions:[
+  "在关系里，我通常是那个先察觉对方情绪的人。",
+  "朋友或伴侣有心事时，我会不自觉地把注意力全放在他们身上。",
+  "我很少在关系里谈论我自己的困难。",
+  "别人向我倾诉时，即使我很累，也很难中断。",
+  "我会因为「没有照顾好对方」而内疚。",
+  "我的情绪通常要等「照顾完别人」之后才轮得到。",
+  "我不太习惯成为「被照顾」的那一方。",
+  "别人对我好时，我有时会不知所措，想快点还回去。",
+  "在关系里失去「有用」的位置，会让我不安。",
+  "我常常在事后才意识到：那顿饭、那次聊天，全是关于对方的。"
+ ],
+ path:[
+  "如果在成长中，你曾经是家里「懂事的那一个」——安抚父母、倾听烦恼、不给家里添麻烦——那么「照顾者」可能就是你最早学会的关系位置。",
+  "这个位置能换来稳定和需要感，但代价是：你的需求容易被你自己放在最后，甚至不被察觉。"
+ ],
+ watch:[
+  "我照顾别人的时候，是出于愿意，还是出于「不这样做就不安」？",
+  "如果我不再扮演照顾者，我担心这段关系会变成什么样？",
+  "我能不能试着在关系里「麻烦」别人一次，并观察对方的真实反应？",
+  "最近一次有人想照顾我，我是怎么回应的？"
+ ]},
+{id:"hard-to-ask", title:"为什么我很难向别人求助？", dims:["independence"],
+ questions:[
+  "遇到困难时，我的第一反应是自己扛。",
+  "开口求助前，我会在心里排练很久，最后往往还是算了。",
+  "我觉得「求助」等于承认自己不行。",
+  "欠别人人情会让我一直记挂，直到还清为止。",
+  "即使别人主动提出帮忙，我也倾向于婉拒。",
+  "我很少让别人看到我「搞不定」的样子。",
+  "求助之后，我会反复担心对方是不是嫌我麻烦。",
+  "我觉得把问题说出来，也未必有人真能帮我。",
+  "相比求助，我宁愿多花几倍的时间自己解决。",
+  "「不麻烦别人」是我很看重的一条原则。"
+ ],
+ path:[
+  "如果在成长中，求助曾经没有用、被嘲笑，或者换来的是「你怎么连这个都不会」，那么「不求助」就可能是一种学到的结论：靠别人，不如靠自己。",
+  "这不是冷漠，也不是逞强——它可能只是说明，「依靠别人是安全的」这个经验，你过去很少有机会获得。"
+ ],
+ watch:[
+  "我不求助，是因为真的不需要，还是因为开口本身让我不舒服？",
+  "我印象中最早一次「求助没有被接住」是什么时候？",
+  "别人向我求助时，我会嫌他麻烦吗？如果不会，为什么认定别人会嫌我？",
+  "我能不能从一件很小的事开始，练习让别人帮一次忙？"
+ ]},
+{id:"fear-conflict", title:"为什么我特别害怕冲突？", dims:["conflict"],
+ questions:[
+  "预感到要有冲突时，我的身体会先紧张起来。",
+  "为了不起冲突，我愿意放弃自己原本坚持的立场。",
+  "看到别人争吵，即使与我无关，我也会不舒服。",
+  "我宁可自己委屈，也不想把矛盾摆到台面上。",
+  "冲突之后，我需要很长时间才能平静下来。",
+  "我很少主动开启一个「可能会有分歧」的话题。",
+  "关系里出现紧张气氛时，我会立刻想要修复它。",
+  "我担心一旦冲突，关系就会破裂或无法挽回。",
+  "别人提高音量时，我会下意识退让。",
+  "我常常在冲突结束后，才想到「我当时应该这样说」。"
+ ],
+ path:[
+  "如果在成长中，冲突意味着失控——升级、羞辱、冷暴力或关系威胁——那么「避免冲突」就不是懦弱，而是一种曾经必要的避险反应。",
+  "只是成年后的冲突大多不会真的带来那些后果，而你的身体可能还停留在旧的警报设置里。"
+ ],
+ watch:[
+  "我害怕的是「分歧」本身，还是分歧之后「可能失控的场面」？",
+  "我记忆中，有没有哪次冲突最后被好好解决了？",
+  "当我退让时，问题是真的消失了，还是只是被推迟了？",
+  "我能不能从低风险的场合开始，练习表达一次不同意见？"
+ ]},
+{id:"criticism-hurts", title:"为什么我一被批评就很难受？", dims:["criticism"],
+ questions:[
+  "被批评后，我需要很久才能平复情绪。",
+  "别人指出我的问题时，我第一反应是防御或自责，而不是听内容。",
+  "一句负面评价，能抵消掉十句表扬。",
+  "被批评后，我会反复回想，并设想别人现在怎么看我。",
+  "我很难做到「对事不对人」地接受反馈。",
+  "哪怕是委婉的建议，也可能让我难受一阵子。",
+  "被批评后，我会想躲开那个批评我的人。",
+  "我会因为害怕被批评，而避免尝试没把握的事。",
+  "批评我的如果是权威或亲近的人，杀伤力会大得多。",
+  "事后我常常发现：对方说的内容没那么严重，是我的反应很强烈。"
+ ],
+ path:[
+  "如果在成长中，犯错曾经和羞耻、否定绑在一起——「你怎么这么笨」「我对你太失望了」——那么批评就可能被体验成对整个人的攻击，而不是对一件事的反馈。",
+  "你的反应强烈，可能不是因为「玻璃心」，而是因为那个批评触碰的，是一个比当下这件事古老得多的地方。"
+ ],
+ watch:[
+  "被批评的那一刻，我难受的是「这件事没做好」，还是「我这个人被否定了」？",
+  "我能否把对方的反馈拆成「事实部分」和「我的感受部分」？",
+  "这个批评者的评价，在我的生活里到底占多大权重？",
+  "如果我把同样的话说给一个我在乎的人，我会用什么样的语气？"
+ ]},
+{id:"kind-or-scared", title:"我到底是真的善良，还是害怕别人讨厌我？", dims:["boundary","validation"],
+ questions:[
+  "我帮助别人时，有时分不清是「愿意」还是「不敢不帮」。",
+  "如果没有人看到、也没有人感谢，我的善意会减少。",
+  "我担心一旦不再「好说话」，别人就会不喜欢我。",
+  "我的体贴有时伴随着隐隐的委屈。",
+  "我对陌生人和普通朋友的耐心，有时多过对自己的耐心。",
+  "我很难心安理得地接受「只做对我自己好的事」。",
+  "别人对我的评价里，「人好」这个词对我格外重要。",
+  "我有时会观察：我帮过的人，是不是也对我好。",
+  "表达真实的不满之前，我会先包装得很温和。",
+  "我害怕自己「其实不是一个善良的人」。"
+ ],
+ path:[
+  "这个问题本身就值得被认真对待——它说明你已经在观察自己的动机了。",
+  "如果「好」曾经是你在家里获得安全和认可的方式，那么善意里就可能混着一些「不得不」。这不意味着你的善良是假的——它更可能是真的善良，只是背负了额外的任务。"
+ ],
+ watch:[
+  "做一件好事之前，我能否停一秒问：如果没有任何回报，我还愿意做吗？",
+  "我的委屈感通常在什么时候出现？它在提醒我什么？",
+  "我能不能允许自己「不善良」一次，然后看看天会不会塌？",
+  "除了「人好」，我希望别人还怎么评价我？"
+ ]},
+{id:"intimacy-repeat", title:"我在亲密关系中可能重复了什么模式？", dims:["contra","independence"],
+ questions:[
+  "我容易被「情绪强烈、难以预测」的人吸引。",
+  "关系一稳定下来，我反而会觉得不安或乏味。",
+  "我会不自觉地承担「让关系维持下去」的主要责任。",
+  "伴侣的情绪变化，对我的影响超过我自己的事。",
+  "我有时会容忍一些朋友劝我「不该忍」的行为。",
+  "关系出问题，我习惯先反省自己哪里做得不够。",
+  "我很难在关系里坚持表达「我不喜欢这样」。",
+  "一旦感到不被珍惜，我会想先离开，以免被离开。",
+  "我对「被抛下」的敏感，超过关系里其他任何问题。",
+  "回头看看，我的几段关系里好像有相似的剧情。"
+ ],
+ path:[
+  "人对亲密关系的「熟悉感」，往往建立在最早的依恋经验里。如果「爱」在你最初的体验中伴随着紧张、讨好或不确定，那么成年后，平静的关系反而可能显得「不对劲」。",
+  "这不意味着你「注定重复」。能看见剧情，本身就是改写剧情的第一步。"
+ ],
+ watch:[
+  "我在关系里最害怕发生的事，和我童年的哪种感受最像？",
+  "我被吸引的人身上，有没有某种熟悉的「家庭气息」？",
+  "当关系平静安稳时，我是不习惯，还是真的不快乐？",
+  "如果给现在的关系提一个「我以前不敢提」的需求，那会是什么？"
+ ]}
+];
+/* ================= 流程与状态 ================= */
+const SECTIONS = [
+  {id:"env", num:"01", title:"成长的熟悉感", intro:PART1.intro, kind:"lk", scale:FAM, questions:PART1.questions,
+   catOf:q=>ENV_CATS[q.cat].name, hint:"凭读这句话时的「熟悉感」作答，不需要回忆具体事件。"},
+  {id:"lk", num:"02", title:"我现在的样子", intro:PART2.blocks[0].intro, kind:"lk", scale:LIKERT, questions:PART2.blocks[0].items,
+   catOf:q=>DIM_NAMES[q.dim], hint:"根据你最近一两年的真实情况。"},
+  {id:"sc", num:"03", title:"具体场景", intro:PART2.blocks[1].intro, kind:"sc", questions:PART2.blocks[1].items,
+   catOf:()=>"情境反应", hint:"凭第一反应选，别想太久。"},
+  {id:"pair", num:"04", title:"二选一", intro:PART2.blocks[2].intro, kind:"pair", questions:PART2.blocks[2].items,
+   catOf:()=>"快速二选一", hint:"没有对错，选更贴近你的那个。"}
+];
+const TOTAL = SECTIONS.reduce((n,s)=>n+s.questions.length,0);
+const INTER_TEXT = {
+  lk:"谢谢你的诚实。接下来换个问法——不看过去，只看你现在的反应。",
+  sc:"接下来是几个日常场景。凭第一反应选你「最可能」的做法。",
+  pair:"最后几道，快速二选一。没有对错。"
+};
+let S = load();
+function fresh(){ return {step:"intro", stageIdx:0, qIdx:0, answers:{}, feedback:{}, typeOverride:null, deep:{topic:null,qIdx:0,answers:{}}, finished:false}; }
+function load(){ try{ const r=localStorage.getItem(STORE_KEY); return r?JSON.parse(r):fresh(); }catch(e){ return fresh(); } }
+function save(){ try{ localStorage.setItem(STORE_KEY, JSON.stringify(S)); }catch(e){} }
+function toast(m){ const t=document.getElementById("toast"); t.textContent=m; t.classList.add("show"); clearTimeout(t._tm); t._tm=setTimeout(()=>t.classList.remove("show"),1800); }
+const $app = document.getElementById("app");
+function go(step){ S.step=step; save(); render(); window.scrollTo({top:0}); }
+function hasProgress(){ return Object.keys(S.answers).length>0 || S.finished; }
+function render(){
+  if(S.step==="intro") renderIntro();
+  else if(S.step==="quiz") renderQuiz();
+  else if(S.step==="inter") renderInter();
+  else if(S.step==="results") renderResults();
+  else if(S.step==="deep") renderDeepQuiz();
+  else if(S.step==="deepResult") renderDeepResult();
+}
+/* ---------- 首页 ---------- */
+function renderIntro(){
+  const resumeBtn = hasProgress() && !S.finished
+    ? `<button class="btn btn-soft" onclick="resumeQuiz()">继续上次（已答 ${Object.keys(S.answers).length} 题）</button>` : "";
+  const viewBtn = S.finished ? `<button class="btn btn-soft" onclick="go('results')">查看我的类型画像</button>` : "";
+  $app.innerHTML = `
+  <div class="screen active"><div class="wrap">
+    <div class="hero">
+      <div class="mark"></div>
+      <div class="eyebrow">自我探索工具</div>
+      <h1>我的成长经历，<br>如何影响了<em>现在的我</em>？</h1>
+      <p class="lead" style="margin-top:20px">约 10 分钟、60 道题。最终你会得到八种适应类型中的一种——它描述的不是「你是哪种人」，而是「过去的环境可能教会了你哪种生存方式」。</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" onclick="startQuiz()">${hasProgress() && !S.finished ? "重新开始（清空进度）" : "开始探索 · 约 10 分钟"}</button>
+        ${resumeBtn}${viewBtn}
+      </div>
+    </div>
+    <div class="notice">
+      <h3><span class="dot"></span>在开始之前，请知道</h3>
+      <ul>
+        <li>本工具用于自我探索，<b>不是</b>医学或心理诊断工具，也无法判断任何人是否患有某种人格障碍。</li>
+        <li>结果描述的是「可能的模式」，最终解释权属于你自己。</li>
+        <li>如果某些经历让你感到明显痛苦、影响日常生活，建议寻求专业心理咨询或精神卫生服务。</li>
+        <li>你的回答只保存在你自己的设备上，不会上传到任何服务器。</li>
+      </ul>
+    </div>
+    <div class="philosophy">
+      <p>我们不是在寻找「谁是坏人」。</p>
+      <p>我们是在帮助一个成年人理解：过去的关系环境可能教会了自己什么，而这些东西今天是否仍然有用。</p>
+    </div>
+  </div></div>`;
+}
+function startQuiz(){
+  if(hasProgress() && !S.finished && !confirm("重新开始将清空已保存的进度，确定吗？")) return;
+  S = fresh(); S.step="quiz"; save(); render();
+}
+function resumeQuiz(){
+  outer: for(let si=0; si<SECTIONS.length; si++){
+    const qs = SECTIONS[si].questions;
+    for(let qi=0; qi<qs.length; qi++){
+      if(S.answers[qs[qi].id]===undefined){ S.stageIdx=si; S.qIdx=qi; break outer; }
+      if(si===SECTIONS.length-1 && qi===qs.length-1){ computeAndFinish(); return; }
+    }
+  }
+  go("quiz");
+}
+/* ---------- 答题 ---------- */
+function currentQ(){ return SECTIONS[S.stageIdx].questions[S.qIdx]; }
+function answeredCount(){ let n=0; SECTIONS.forEach(s=>s.questions.forEach(q=>{ if(S.answers[q.id]!==undefined) n++; })); return n; }
+function renderQuiz(){
+  const st = SECTIONS[S.stageIdx], q = currentQ();
+  const done = answeredCount();
+  const pct = Math.round(done/TOTAL*100);
+  const sel = S.answers[q.id];
+  let optsHtml = "";
+  if(st.kind==="lk"){
+    optsHtml = st.scale.map(o=>`<button class="opt ${sel===o.v?"sel":""}" onclick="answer(${o.v})"><span class="tick"></span>${o.t}</button>`).join("");
+  }else if(st.kind==="sc"){
+    optsHtml = q.opts.map((o,i)=>`<button class="opt ${sel&&sel.i===i?"sel":""}" onclick="answerOpt(${i})"><span class="tick"></span>${o.t}</button>`).join("");
+  }else{
+    optsHtml = q.opts.map((o,i)=>`<button class="opt pair-opt ${sel&&sel.i===i?"sel":""}" onclick="answerOpt(${i})">${o.t}</button>`).join("");
+  }
+  $app.innerHTML = `
+  <div class="screen active">
+    <div class="q-top"><div class="wrap">
+      <div class="q-top-row">
+        <span class="q-stage">${st.num} · ${st.title}</span>
+        <span class="q-count">第 ${Math.min(done+1,TOTAL)} / ${TOTAL} 题</span>
+      </div>
+      <div class="progress"><i style="width:${pct}%"></i></div>
+    </div></div>
+    <div class="wrap"><div class="q-body">
+      ${S.qIdx===0?`<p class="muted" style="margin-bottom:34px;font-size:14.5px">${st.intro}</p>`:""}
+      <div class="q-card" id="qcard">
+        <div class="q-cat">${st.catOf(q)}</div>
+        <div class="q-text">${q.text}</div>
+        <div class="q-hint">${st.hint}</div>
+        <div class="opts">${optsHtml}</div>
+        <div class="q-nav">
+          <button class="link-btn" onclick="prevQ()" ${done===0?'style="visibility:hidden"':""}>← 上一题</button>
+          <button class="link-btn" onclick="pauseQuiz()">稍后再继续</button>
+        </div>
+        <div class="autosave">进度已自动保存在本设备</div>
+      </div>
+    </div></div>
+  </div>`;
+}
+function advance(){
+  const card = document.getElementById("qcard");
+  if(card) card.classList.add("leaving");
+  setTimeout(()=>{
+    if(S.qIdx < SECTIONS[S.stageIdx].questions.length-1){ S.qIdx++; go("quiz"); }
+    else if(S.stageIdx < SECTIONS.length-1){ go("inter"); }
+    else computeAndFinish();
+  },200);
+}
+function answer(v){ S.answers[currentQ().id]=v; save(); advance(); }
+function answerOpt(i){
+  const q = currentQ();
+  S.answers[q.id] = {i:i, d:q.opts[i].dim};
+  save(); advance();
+}
+function prevQ(){
+  if(S.qIdx>0) S.qIdx--;
+  else if(S.stageIdx>0){ S.stageIdx--; S.qIdx = SECTIONS[S.stageIdx].questions.length-1; }
+  go("quiz");
+}
+function pauseQuiz(){ save(); go("intro"); toast("进度已保存，随时可以回来继续"); }
+function renderInter(){
+  const next = SECTIONS[S.stageIdx+1];
+  $app.innerHTML = `
+  <div class="screen active"><div class="wrap"><div class="inter">
+    <div class="num">${next.num} / 04</div>
+    <div class="big">接下来：${next.title}</div>
+    <p class="muted" style="max-width:440px;margin:0 auto 30px">${INTER_TEXT[next.id]||""}</p>
+    <button class="btn btn-primary" onclick="nextStage()">继续</button>
+  </div></div></div>`;
+}
+function nextStage(){ S.stageIdx++; S.qIdx=0; go("quiz"); }
+/* ================= 计分与定型 ================= */
+function dimScores(){
+  const dims = Object.keys(DIM_NAMES);
+  const lk = SECTIONS[1].questions;
+  const base = {};
+  dims.forEach(d=>{
+    const vals = lk.filter(q=>q.dim===d).map(q=>{
+      const v = S.answers[q.id]; if(v===undefined) return null;
+      return q.rev ? 6-v : v;
+    }).filter(v=>v!==null);
+    base[d] = vals.length ? vals.reduce((a,b)=>a+b,0)/vals.length : 3;
+  });
+  // 场景题与迫选题加成
+  const boost = {}; dims.forEach(d=>boost[d]=0);
+  [SECTIONS[2], SECTIONS[3]].forEach(sec=>{
+    sec.questions.forEach(q=>{
+      const a = S.answers[q.id];
+      if(a && a.d) boost[a.d] += 0.35;
+    });
+  });
+  const scores = {};
+  dims.forEach(d=>scores[d]=Math.min(5, base[d]+boost[d]));
+  return scores;
+}
+function computeProfile(){
+  const scores = dimScores();
+  const sorted = Object.keys(scores).sort((a,b)=>scores[b]-scores[a]);
+  const d1 = sorted[0], d2 = sorted[1];
+  // 矛盾者规则：独立 与 焦虑系维度同时偏高
+  let typeKey;
+  if(d1==="independence" && ANXIOUS_DIMS.includes(d2) && scores[d2]>=3.2) typeKey="contra";
+  else if(ANXIOUS_DIMS.includes(d1) && d2==="independence" && scores[d2]>=Math.max(3.2, scores[d1]-0.4)) typeKey="contra";
+  else typeKey = DIM2TYPE[d1];
+  if(S.typeOverride) typeKey = S.typeOverride;
+  // 备选类型
+  let runnerKey = typeKey==="contra" ? DIM2TYPE[d1] : (DIM2TYPE[d2]!==typeKey ? DIM2TYPE[d2] : DIM2TYPE[sorted[2]]);
+  if(runnerKey===typeKey) runnerKey = "indep";
+  // 强度
+  const rest = sorted.slice(1).map(k=>scores[k]);
+  const avgRest = rest.reduce((a,b)=>a+b,0)/rest.length;
+  const gap12 = scores[d1]-scores[d2];
+  let strength = Math.round(60 + (scores[d1]-avgRest)*16 + gap12*6);
+  strength = Math.max(55, Math.min(97, strength));
+  const flat = gap12 < 0.35;
+  // 底色
+  let baseDim = null;
+  if(typeKey!=="contra" && DIM2TYPE[d2]!==typeKey) baseDim = d2;
+  // 依恋分布
+  const m = (...ds)=>ds.reduce((a,d)=>a+scores[d],0)/ds.length;
+  const anx = m("monitor","validation","criticism","needs");
+  const avo = m("independence","control");
+  const fear = Math.min(anx,avo)*0.65 + m("conflict","boundary")*0.35;
+  const secure = Math.max(1, 5.4 - Math.max(anx,avo,fear));
+  const pct = v=>Math.max(4, Math.min(100, Math.round((v-1)/4*100)));
+  const attach = { "安全":pct(secure), "焦虑":pct(anx), "疏离":pct(avo), "恐惧":pct(fear) };
+  // 创伤反应 4F
+  const fawn = m("conflict","boundary","monitor"), flight = scores.independence,
+        freeze = m("criticism","needs"), fight = scores.control;
+  const sum4 = fawn+flight+freeze+fight;
+  const fff = { "讨好":Math.round(fawn/sum4*100), "逃离":Math.round(flight/sum4*100), "僵住":Math.round(freeze/sum4*100), "对抗":Math.round(fight/sum4*100) };
+  // 成长环境
+  const env = {};
+  for(const k in ENV_CATS){
+    const vals = PART1.questions.filter(q=>q.cat===k).map(q=>S.answers[q.id]).filter(v=>v!==undefined);
+    env[k] = vals.length ? vals.reduce((a,b)=>a+b,0)/vals.length : 0;
+  }
+  return {scores, sorted, typeKey, runnerKey, strength, flat, baseDim, attach, fff, env};
+}
+function computeAndFinish(){ S.finished=true; save(); go("results"); }
+
+/* ================= 结果页 ================= */
+function renderResults(){
+  const R = computeProfile();
+  const T = TYPES[R.typeKey];
+  const today = new Date().toLocaleDateString("zh-CN",{year:"numeric",month:"long",day:"numeric"});
+  const fb = S.feedback.type;
+  const runner = TYPES[R.runnerKey];
+  const dimBars = R.sorted.map(k=>{
+    const lv = lvOf(R.scores[k]);
+    return `<div class="bar-row"><span class="bar-name">${DIM_NAMES[k]}</span><span class="bar-track"><span class="bar-fill lv${lv+1} ${lv<2?"low":""}"></span></span><span class="bar-lv">${LV_NAMES[lv]}</span></div>`;
+  }).join("");
+  const envSorted = Object.keys(R.env).sort((a,b)=>R.env[b]-R.env[a]);
+  const envTop = envSorted.filter(k=>R.env[k]>=3.2).slice(0,2);
+  // 依恋主倾向
+  const attachKey = { "安全":"secure", "焦虑":"anx", "疏离":"avo", "恐惧":"fear" };
+  const aMax = Object.keys(R.attach).sort((a,b)=>R.attach[b]-R.attach[a])[0];
+  const A = ATTACH_A[attachKey[aMax]];
+  // 创伤反应首选通道
+  const fKeys = Object.keys(R.fff).sort((a,b)=>R.fff[b]-R.fff[a]);
+  const fFlat = (R.fff[fKeys[0]] - R.fff[fKeys[fKeys.length-1]]) <= 4;
+  const F = fFlat ? FF_A.flat : FF_A[fKeys[0]];
+  const fTitle = fFlat ? "四个通道比较均衡" : "首选通道：" + fKeys[0];
+  const attachBars = Object.keys(R.attach).map(k=>
+    `<div class="dbar"><span class="dbar-name">${k}</span><span class="dbar-track"><span class="dbar-fill" style="width:${R.attach[k]}%"></span></span><span class="dbar-val">${R.attach[k]}%</span></div>`).join("");
+  const fBars = Object.keys(R.fff).map(k=>
+    `<div class="dbar"><span class="dbar-name">${k}</span><span class="dbar-track"><span class="dbar-fill" style="width:${R.fff[k]}%;background:${T.color}"></span></span><span class="dbar-val">${R.fff[k]}%</span></div>`).join("");
+  const fbNote = fb==="yes" ? "你已确认「很像我」。" : fb==="part" ? "你反馈「有点像」——可以把它当作观察线索，而不是结论。" : "";
+  $app.innerHTML = `
+  <div class="screen active"><div class="wrap-wide">
+    <div class="res-hero">
+      <div class="eyebrow">我的类型画像</div>
+      <div class="date">生成于 ${today} · 本结果仅为自我探索参考</div>
+    </div>
+
+    <div class="type-card" style="--tc:${T.color}">
+      <div class="type-en">${T.en}</div>
+      <div class="type-motif">${MOTIFS[R.typeKey]}</div>
+      <div class="type-name">${T.name}</div>
+      <div class="type-sub">${T.sub}</div>
+      <div class="type-attach">${T.attach}</div>
+      <div class="type-motto">「${T.motto}」</div>
+      <div class="type-strength">主导倾向强度 <b>${R.strength}</b> / 100</div>
+      ${R.baseDim?`<div class="type-base">带着「${TYPES[DIM2TYPE[R.baseDim]].name}」的底色——${BASE_TEXT[R.baseDim]}</div>`:""}
+      ${R.flat?`<div class="type-flat">你的各项得分比较均衡，以上是相对最像你的那一种。</div>`:""}
+    </div>
+    <div class="fb-row no-print">
+      <div class="fb-label">这个结果像你吗？</div>
+      <button class="fb-btn ${fb==="yes"?"on":""}" onclick="setTypeFb('yes')">很像我</button>
+      <button class="fb-btn ${fb==="part"?"on":""}" onclick="setTypeFb('part')">有点像</button>
+      <button class="fb-btn ${fb==="no"?"on":""}" onclick="setTypeFb('no')">不太像我</button>
+      ${fbNote?`<div class="fb-label" style="color:var(--sage-deep)">${fbNote}</div>`:""}
+    </div>
+    <div class="alt-type ${fb==="no"?"show":""}">
+      <p class="small" style="margin-bottom:8px">没关系——画像只是概括。从你的回答看，第二接近的是：</p>
+      <h3>${runner.name} · ${runner.sub}</h3>
+      <p class="muted" style="font-size:14px;margin:8px 0 14px">${runner.motto}</p>
+      <button class="btn btn-soft btn-sm" onclick="switchType()">换成这个类型</button>
+    </div>
+
+    <div class="res-sec">
+      <div class="eyebrow">01 / 核心画像</div>
+      <h2>这套模式是怎么来的</h2>
+      <p class="muted" style="font-size:16px;line-height:2">${T.narrative}</p>
+    </div>
+
+    <div class="res-sec">
+      <div class="eyebrow">02 / 它如何影响我的选择</div>
+      <h2>在生活的各个场景里</h2>
+      <div class="scene-grid">
+        <div class="scene-card" style="--tc:${T.color}"><h4>亲密关系</h4><p>${T.scenes.love.b}</p><p class="mech"><b>机制｜</b>${T.scenes.love.m}</p></div>
+        <div class="scene-card" style="--tc:${T.color}"><h4>工作</h4><p>${T.scenes.work.b}</p><p class="mech"><b>机制｜</b>${T.scenes.work.m}</p></div>
+        <div class="scene-card" style="--tc:${T.color}"><h4>朋友</h4><p>${T.scenes.friend.b}</p><p class="mech"><b>机制｜</b>${T.scenes.friend.m}</p></div>
+        <div class="scene-card" style="--tc:${T.color}"><h4>独处时</h4><p>${T.scenes.self.b}</p><p class="mech"><b>机制｜</b>${T.scenes.self.m}</p></div>
+      </div>
+    </div>
+
+    <div class="res-sec">
+      <div class="eyebrow">03 / 依恋与创伤反应</div>
+      <h2>我的依恋与应激方式</h2>
+      <div class="dist-wrap">
+        <div class="dist-card">
+          <h4>依恋倾向分布</h4>
+          <p class="small">你在关系中获取安全感的方式偏向（四项独立计分，非互斥）</p>
+          ${attachBars}
+          <div class="attach-badge">${A.badge}</div>
+          <p class="dist-analysis">${A.text}</p>
+        </div>
+        <div class="dist-card">
+          <h4>创伤反应分布</h4>
+          <p class="small">压力下你的第一反应通道</p>
+          ${fBars}
+          <div class="attach-badge" style="background:var(--line-2);color:var(--ink)">${fTitle}</div>
+          <p class="dist-analysis">${F.text}</p>
+        </div>
+      </div>
+      <p class="small" style="margin-top:12px">分布图只描述倾向的相对比例，不代表好坏，也不是诊断。</p>
+    </div>
+
+    <div class="res-sec">
+      <div class="eyebrow">04 / 它给我的，和它拿走的</div>
+      <h2>力量与代价</h2>
+      <div class="pc-grid">
+        <div class="pc-card power"><h4>这种塑造给你的</h4><p>${A.power}</p><p style="margin-top:10px">${F.power}</p></div>
+        <div class="pc-card cost"><h4>它的代价</h4><p>${A.cost}</p><p style="margin-top:10px">${F.cost}</p></div>
+      </div>
+    </div>
+
+    <div class="res-sec">
+      <div class="eyebrow">05 / 模式剖面</div>
+      <h2>八个维度的完整得分</h2>
+      <div class="dim-mini">${dimBars}<div class="dim-alt"><b>另一种可能：</b>${ALT_NOTE}</div></div>
+    </div>
+
+    <div class="res-sec">
+      <div class="eyebrow">06 / 成长环境回顾</div>
+      <h2>我描述的成长环境</h2>
+      ${envTop.length?`<div class="env-card"><p class="env-quote">在你描述的成长环境中，${envTop.map(k=>"「"+ENV_CATS[k].label+"」").join("，")}。</p>${envTop.map(k=>`<p class="muted" style="font-size:14.5px;line-height:1.9;margin-top:6px">${ENV_CATS[k].desc}</p>`).join("")}</div>`
+        :`<div class="env-card"><p class="env-quote">从你的回答来看，这些特定的家庭互动模式都不算突出——你的成长环境可能更多由其他因素塑造。</p></div>`}
+      <p class="small">这一部分基于你对「熟悉感」的描述，只是背景参考，不参与类型判定。</p>
+    </div>
+
+    <div class="res-actions no-print">
+      <button class="btn btn-primary btn-sm" onclick="shareImage()">保存画像图片</button>
+      <button class="btn btn-ghost btn-sm" onclick="window.print()">打印结果</button>
+      <button class="btn btn-ghost btn-sm" onclick="restart()">重新开始</button>
+    </div>
+    <div class="footer-note">
+      本工具用于自我探索，不构成任何医学或心理诊断。类型只是对「可能的模式」的概括，最终解释权属于你自己。如果某些内容让你感到持续的痛苦或影响日常生活，寻求专业心理咨询会是值得考虑的选择。你的所有回答仅保存在这台设备上。
+    </div>
+  </div></div>`;
+}
+function setTypeFb(v){ S.feedback.type=v; save(); renderResults(); window.scrollTo({top:0}); }
+function switchType(){ S.typeOverride = computeProfile().runnerKey; S.feedback.type="part"; save(); renderResults(); window.scrollTo({top:0}); toast("已切换为更适合你的类型"); }
+function restart(){ if(confirm("确定要清空所有回答并重新开始吗？")){ S=fresh(); save(); go("intro"); } }
+
+/* ================= 深入探索 ================= */
+function startDeep(id){ S.deep={topic:id,qIdx:0,answers:{}}; go("deep"); }
+function renderDeepQuiz(){
+  const t = DEEP_TOPICS.find(x=>x.id===S.deep.topic);
+  const q = t.questions[S.deep.qIdx];
+  const sel = S.deep.answers[S.deep.qIdx];
+  const pct = Math.round(S.deep.qIdx/t.questions.length*100);
+  $app.innerHTML = `
+  <div class="screen active">
+    <div class="q-top"><div class="wrap">
+      <div class="q-top-row"><span class="q-stage">深入探索</span><span class="q-count">第 ${S.deep.qIdx+1} / ${t.questions.length} 题</span></div>
+      <div class="progress"><i style="width:${pct}%"></i></div>
+    </div></div>
+    <div class="wrap"><div class="q-body">
+      ${S.deep.qIdx===0?`<p class="muted" style="margin-bottom:34px;font-size:14.5px">围绕「${t.title}」，再看几个更具体的句子。凭直觉作答就好。</p>`:""}
+      <div class="q-card" id="qcard">
+        <div class="q-cat">${t.title}</div>
+        <div class="q-text">${q}</div>
+        <div class="opts">${LIKERT.map(o=>`<button class="opt ${sel===o.v?"sel":""}" onclick="deepAnswer(${o.v})"><span class="tick"></span>${o.t}</button>`).join("")}</div>
+        <div class="q-nav">
+          <button class="link-btn" onclick="deepPrev()" ${S.deep.qIdx===0?'style="visibility:hidden"':""}>← 上一题</button>
+          <button class="link-btn" onclick="go('results')">返回画像</button>
+        </div>
+      </div>
+    </div></div>
+  </div>`;
+}
+function deepAnswer(v){
+  S.deep.answers[S.deep.qIdx]=v; save();
+  const card=document.getElementById("qcard"); if(card) card.classList.add("leaving");
+  setTimeout(()=>{
+    const t=DEEP_TOPICS.find(x=>x.id===S.deep.topic);
+    if(S.deep.qIdx<t.questions.length-1){ S.deep.qIdx++; go("deep"); }
+    else go("deepResult");
+  },200);
+}
+function deepPrev(){ if(S.deep.qIdx>0){ S.deep.qIdx--; go("deep"); } }
+function renderDeepResult(){
+  const t = DEEP_TOPICS.find(x=>x.id===S.deep.topic);
+  const vals = Object.values(S.deep.answers);
+  const avg = vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:0;
+  const lv = lvOf(avg);
+  const top = t.questions.map((q,i)=>({q,v:S.deep.answers[i]||0})).sort((a,b)=>b.v-a.v).filter(x=>x.v>=4).slice(0,3);
+  $app.innerHTML = `
+  <div class="screen active"><div class="wrap">
+    <div class="res-hero" style="padding-bottom:6px">
+      <div class="eyebrow">深入探索</div>
+      <h2 style="font-size:clamp(24px,5.5vw,32px)">${t.title}</h2>
+    </div>
+    <div class="res-sec" style="margin-top:26px">
+      <div class="deep-block">
+        <h3><span class="n">A</span>可能的形成路径</h3>
+        ${t.path.map(p=>`<p>${p}</p>`).join("")}
+        <p class="small" style="margin-top:12px">如果这与你的实际经历一致，它或许是一个值得留意的线索；如果不一致，请以你的感受为准。</p>
+      </div>
+      <div class="deep-block">
+        <h3><span class="n">B</span>我当前的表现</h3>
+        ${lv>=3?`<p>从你的回答来看，这个主题与你当前的状态<strong>有较强的呼应</strong>（自评倾向：${LV_NAMES[lv]}）。你勾出的一些句子：</p>`
+          :`<p>从你的回答来看，这个主题与你的呼应不算强烈（自评倾向：${LV_NAMES[lv]}）。${top.length?"不过，以下几句你还是觉得比较像自己：":"这可能说明它并不是你目前最核心的议题。"}</p>`}
+        ${top.map(x=>`<div class="deep-quote">「${x.q}」</div>`).join("")}
+      </div>
+      <div class="deep-block">
+        <h3><span class="n">C</span>可以观察的问题</h3>
+        <p style="margin-bottom:6px">接下来的一两周，可以带着这几个问题观察自己——不用急着回答：</p>
+        <ul>${t.watch.map(w=>`<li>${w}</li>`).join("")}</ul>
+      </div>
+      <div class="dim-alt"><b>提醒：</b>以上只是一种可能的解释框架。当前压力、近期经历、天生气质等都可能带来类似的表现。如果这些议题让你持续感到痛苦，专业心理咨询能提供更深入的帮助。</div>
+      <div class="res-actions">
+        <button class="btn btn-primary btn-sm" onclick="go('results')">返回我的画像</button>
+        <button class="btn btn-ghost btn-sm" onclick="backToTopics()">探索其他主题</button>
+      </div>
+    </div>
+  </div></div>`;
+}
+function backToTopics(){ go("results"); setTimeout(()=>{ const el=document.querySelector(".topics"); if(el) el.scrollIntoView({behavior:"smooth"}); },80); }
+
+/* ================= 分享图片 ================= */
+function shareImage(){
+  const R = computeProfile();
+  const T = TYPES[R.typeKey];
+  const attachKeyMap = { "安全":"secure", "焦虑":"anx", "疏离":"avo", "恐惧":"fear" };
+  const aMax = Object.keys(R.attach).sort((a,b)=>R.attach[b]-R.attach[a])[0];
+  const aBadge = ATTACH_A[attachKeyMap[aMax]].badge;
+  const c = document.createElement("canvas");
+  const W=1080,H=1440; c.width=W; c.height=H;
+  const x = c.getContext("2d");
+  x.fillStyle="#F7F2EA"; x.fillRect(0,0,W,H);
+  // 顶部柔光
+  const g = x.createRadialGradient(W/2,300,40,W/2,300,420);
+  g.addColorStop(0,T.color+"33"); g.addColorStop(1,"rgba(0,0,0,0)");
+  x.fillStyle=g; x.fillRect(0,0,W,760);
+  x.textAlign="center";
+  x.font="600 30px 'Noto Sans SC', sans-serif"; x.fillStyle="#9C9388";
+  x.fillText("自 我 探 索 · 成 长 适 应 画 像", W/2, 120);
+  // 类型徽章
+  x.beginPath(); x.arc(W/2, 320, 110, 0, Math.PI*2); x.fillStyle=T.color; x.fill();
+  x.font="700 92px 'Noto Serif SC', serif"; x.fillStyle="#FDFBF7";
+  x.fillText(T.name[0], W/2, 354);
+  // 类型名
+  x.font="700 110px 'Noto Serif SC', serif"; x.fillStyle="#1B1916";
+  x.fillText(T.name, W/2, 540);
+  x.font="400 40px 'Noto Sans SC', sans-serif"; x.fillStyle="#6B6359";
+  x.fillText(T.sub+" · "+T.attach, W/2, 610);
+  x.font="500 42px 'Noto Serif SC', serif"; x.fillStyle=T.color;
+  x.fillText("「"+T.motto+"」", W/2, 706);
+  x.font="400 30px 'Noto Sans SC', sans-serif"; x.fillStyle="#9C9388";
+  x.fillText(aBadge+" · 主导倾向强度 "+R.strength+" / 100", W/2, 768);
+  // 分隔线
+  x.fillStyle="#84A59D"; x.fillRect(140, 850, W-280, 3);
+  // 4F 分布
+  x.font="500 30px 'Noto Sans SC', sans-serif"; x.fillStyle="#6B6359";
+  x.fillText("创伤反应分布", W/2, 916);
+  const keys = Object.keys(R.fff);
+  let y = 960;
+  keys.forEach(k=>{
+    x.textAlign="left";
+    x.font="400 30px 'Noto Sans SC', sans-serif"; x.fillStyle="#1B1916";
+    x.fillText(k, 160, y+26);
+    x.fillStyle="#EFEAE0"; rr(x, 290, y, 560, 26, 13); x.fill();
+    x.fillStyle=T.color; rr(x, 290, y, Math.max(20, 560*R.fff[k]/100), 26, 13); x.fill();
+    x.textAlign="right"; x.font="700 28px 'Noto Sans SC', sans-serif"; x.fillStyle="#6B6359";
+    x.fillText(R.fff[k]+"%", 930, y+26);
+    x.textAlign="center";
+    y += 66;
+  });
+  // 底部
+  x.font="400 26px 'Noto Sans SC', sans-serif"; x.fillStyle="#9C9388";
+  x.fillText(new Date().toLocaleDateString("zh-CN"), W/2, 1300);
+  x.fillText("本画像仅为自我探索参考，不构成任何诊断", W/2, 1348);
+  x.font="400 26px 'Noto Serif SC', serif"; x.fillStyle="#52756D";
+  x.fillText("「我不是在找谁是坏人，我是在开始理解自己。」", W/2, 1400);
+  c.toBlob(b=>{
+    const a=document.createElement("a");
+    a.href=URL.createObjectURL(b); a.download="我的类型画像-"+T.name+".png"; a.click();
+    setTimeout(()=>URL.revokeObjectURL(a.href),4000);
+  });
+  toast("画像图片已生成");
+}
+function rr(x,px,py,w,h,r){ x.beginPath(); x.moveTo(px+r,py); x.arcTo(px+w,py,px+w,py+h,r); x.arcTo(px+w,py+h,px,py+h,r); x.arcTo(px,py+h,px,py,r); x.arcTo(px,py,px+w,py,r); x.closePath(); }
+
+render();
+</script>
+</body>
+</html>
